@@ -132,16 +132,16 @@ const BookingCalendar = () => {
                             whileTap={{ scale: 0.95 }}
                             onClick={() => handleDateChange(date)}
                             className={`cursor-pointer p-4 text-center border-r last:border-r-0 border-b ${isSelected(date)
-                                    ? 'bg-indigo-100 border-indigo-300'
-                                    : 'hover:bg-gray-100'
+                                ? 'bg-indigo-100 border-indigo-300'
+                                : 'hover:bg-gray-100'
                                 }`}
                         >
                             <div className="text-sm font-medium text-gray-500">{formatDay(date)}</div>
                             <div className={`text-2xl font-bold mt-1 ${isToday(date)
-                                    ? 'text-indigo-600'
-                                    : isSelected(date)
-                                        ? 'text-indigo-800'
-                                        : 'text-gray-800'
+                                ? 'text-indigo-600'
+                                : isSelected(date)
+                                    ? 'text-indigo-800'
+                                    : 'text-gray-800'
                                 }`}>
                                 {formatDate(date)}
                             </div>
@@ -173,8 +173,8 @@ const BookingCalendar = () => {
                                 whileTap={{ scale: 0.98 }}
                                 onClick={() => handleSlotSelect(slot)}
                                 className={`w-full p-4 text-left rounded-lg transition-all ${selectedSlot === slot
-                                        ? 'bg-indigo-600 text-white shadow-md'
-                                        : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+                                    ? 'bg-indigo-600 text-white shadow-md'
+                                    : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
                                     }`}
                             >
                                 <div className="flex items-center">
@@ -205,8 +205,8 @@ const BookingCalendar = () => {
                                 whileTap={{ scale: 0.98 }}
                                 onClick={() => handleRoomSelect(room)}
                                 className={`w-full p-4 text-left rounded-lg transition-all ${selectedRoom?.id === room.id
-                                        ? 'bg-indigo-600 text-white shadow-md'
-                                        : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+                                    ? 'bg-indigo-600 text-white shadow-md'
+                                    : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
                                     }`}
                             >
                                 <div className="font-medium">{room.name}</div>
@@ -218,8 +218,8 @@ const BookingCalendar = () => {
                                         <span
                                             key={index}
                                             className={`text-xs px-2 py-1 rounded-full ${selectedRoom?.id === room.id
-                                                    ? 'bg-white bg-opacity-20 text-white'
-                                                    : 'bg-indigo-100 text-indigo-800'
+                                                ? 'bg-white bg-opacity-20 text-white'
+                                                : 'bg-indigo-100 text-indigo-800'
                                                 }`}
                                         >
                                             {feature}

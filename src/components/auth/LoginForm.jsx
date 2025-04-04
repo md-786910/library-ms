@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaSignInAlt, FaBook } from 'react-icons/fa';
 import FormInput from '../common/FormInput';
@@ -12,6 +12,11 @@ const LoginForm = ({ setIsLoggedIn }) => {
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation();
+    
+    // Get the redirect URL from query parameters
+    const queryParams = new URLSearchParams(location.search);
+    const redirectUrl = queryParams.get('redirect') || '/dashboard';
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -24,7 +29,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
             localStorage.setItem('authToken', 'demo-token');
             setIsLoggedIn(true);
             setIsLoading(false);
-            navigate('/dashboard');
+            navigate(redirectUrl);
         }, 1500);
     };
 
